@@ -8,7 +8,7 @@ import {
     LOAD_COMMENTS_SUCCESS
 } from "./article-actions";
 import {convertToDate, updateState} from "../util/state-util";
-import {commentSortOrder} from "../model/comment-sort-order";
+import {commentSortOrder} from "../model/commentSortOrder";
 
 const initialState = {
     commentSortOrder: commentSortOrder.DATE_DESC
