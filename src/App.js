@@ -1,10 +1,10 @@
 import './App.css';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Layout from "./components/Layout/Layout";
-import ArticleList from "./components/Article/ArticleList/ArticleList";
-import ShoppingCartList from "./components/ShoppingCart/ShoppingCartList/ShoppingCartList";
-import OrderList from "./components/Order/OrderList/OrderList";
-import ArticleDetails from "./components/Article/ArticleDetails/ArticleDetails";
+import ArticleList from "./components/Articles/Articles";
+import ShoppingCartList from "./components/ShoppingCarts/ShoppingCarts";
+import OrderList from "./components/Orders/Orders";
+import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import Login from "./components/Auth/Login/Login";
 import {useEffect} from "react";
