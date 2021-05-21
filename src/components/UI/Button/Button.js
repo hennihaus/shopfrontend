@@ -1,11 +1,20 @@
 import "./Button.css";
+import {Component} from "react";
 
-function Button(props) {
-    return (
-        <button className='Button' onClick={props.click}>
-            {props.children}
-        </button>
-    )
+class Button extends Component {
+
+    handleClick = event => {
+        event.stopPropagation();
+        this.props.click();
+    }
+
+    render() {
+        return (
+            <button className='Button' onClick={event => this.handleClick(event)}>
+                {this.props.children}
+            </button>
+        );
+    }
 }
 
 export default Button;

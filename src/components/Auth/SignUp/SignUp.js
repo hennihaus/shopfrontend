@@ -1,8 +1,8 @@
 import './SignUp.css';
 import {Component} from "react";
 import {register} from "../../../store/auth-actions";
-import Button from "../../UI/Button/Button";
 import {connect} from "react-redux";
+import Title from "../../UI/Title/Title";
 
 class SignUp extends Component {
 
@@ -18,7 +18,8 @@ class SignUp extends Component {
         email: ''
     }
 
-    signUp = () => {
+    signUp = (event) => {
+        event.preventDefault();
         const userData = {
             pw: this.state.pw,
             firstname: this.state.firstname,
@@ -37,27 +38,88 @@ class SignUp extends Component {
     render() {
         return (
             <div className='SignUp'>
-                <h2>Registrieren</h2>
-                <label>E-Mail</label>
-                <input onChange={event => this.setState({email: event.target.value})} value={this.state.email}/>
-                <label>Passwort</label>
-                <input onChange={event => this.setState({pw: event.target.value})} value={this.state.pw}/>
-                <label>Vorname</label>
-                <input onChange={event => this.setState({firstname: event.target.value})} value={this.state.firstname}/>
-                <label>Nachname</label>
-                <input onChange={event => this.setState({lastname: event.target.value})} value={this.state.lastname}/>
-                <label>Straße</label>
-                <input onChange={event => this.setState({street: event.target.value})} value={this.state.street}/>
-                <label>PLZ</label>
-                <input onChange={event => this.setState({postcode: event.target.value})} value={this.state.postcode}/>
-                <label>Stadt</label>
-                <input onChange={event => this.setState({city: event.target.value})} value={this.state.city}/>
-                <label>Land</label>
-                <input onChange={event => this.setState({country: event.target.value})} value={this.state.country}/>
-                <label>Telefon</label>
-                <input onChange={event => this.setState({phone: event.target.value})} value={this.state.phone}/>
-                <Button click={() => this.signUp()}>Registieren</Button>
-                <div>{this.props.signUpMessage}</div>
+                <Title>Registrieren</Title>
+                <form onSubmit={event => this.signUp(event)}>
+                    <fieldset>
+                        <legend>Formular</legend>
+                        <div className='SignUp__Formset'>
+                            <label>E-Mail</label>
+                            <input onChange={event => this.setState({email: event.target.value})}
+                                   type='email'
+                                   value={this.state.email}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Passwort</label>
+                            <input onChange={event => this.setState({pw: event.target.value})} value={this.state.pw}
+                                   type='password'
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Vorname</label>
+                            <input onChange={event => this.setState({firstname: event.target.value})}
+                                   value={this.state.firstname}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Nachname</label>
+                            <input onChange={event => this.setState({lastname: event.target.value})}
+                                   value={this.state.lastname}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Straße</label>
+                            <input onChange={event => this.setState({street: event.target.value})}
+                                   value={this.state.street}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>PLZ</label>
+                            <input onChange={event => this.setState({postcode: event.target.value})}
+                                   value={this.state.postcode}
+                                   type='number'
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Stadt</label>
+                            <input onChange={event => this.setState({city: event.target.value})}
+                                   value={this.state.city}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Land</label>
+                            <input onChange={event => this.setState({country: event.target.value})}
+                                   value={this.state.country}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='SignUp__Formset'>
+                            <label>Telefon</label>
+                            <input onChange={event => this.setState({phone: event.target.value})}
+                                   value={this.state.phone}
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <input className='SignUp__Submit' type='submit' value='Registrieren'/>
+                    </fieldset>
+                </form>
+                <p>{this.props.signUpMessage}</p>
             </div>
         )
     }

@@ -1,0 +1,11 @@
+.Articles__Header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Articles__Section {
+    overflow: auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,9 +1,10 @@
 import "./Articles.css";
 import {Component} from "react";
 import {connect} from "react-redux";
-import CategoryList from "../Categories/Categories";
 import {loadArticles} from "../../store/article-actions";
 import Article from "./Article/Article";
+import Title from "../UI/Title/Title";
+import Categories from "../Categories/Categories";
 
 class Articles extends Component {
 
@@ -38,8 +39,13 @@ class Articles extends Component {
 
         return (
             <div className='Articles'>
-                <CategoryList/>
-                {articles}
+                <div className='Articles__Header'>
+                    <Title>Artikel</Title>
+                    <Categories/>
+                </div>
+                <div className='Articles__Section'>
+                    {articles}
+                </div>
             </div>
         )
     }

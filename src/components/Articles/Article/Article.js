@@ -4,17 +4,16 @@ import ShoppingCartButton from "../../ShoppingCarts/ShoppingCart/ShoppingCartBut
 import Stars from "../../UI/Stars/Stars";
 
 function Article(props) {
-
     return (
-        <div className='Article'>
-            <div onClick={() => props.history.push(`articles/${props.article._id}`)}>
-                <h3>{props.article.name}</h3>
-                <img src={props.article.href} alt={props.article.shortdescription}/>
-                <div>{props.article.rating ? <Stars rating={props.article.rating}/> : 'Keine Rezensionen'}</div>
-                <div>{parseFloat(props.article.price).toFixed(2)} Euro</div>
+        <article className='Article' onClick={() => props.history.push(`articles/${props.article._id}`)}>
+            <img className='Article__Image' src={props.article.href} alt={props.article.shortdescription} onError={(event => event.target.src = '/assets/image_not_found.png')}/>
+            <div className='Article__Text'>
+                <h2>{props.article.name}</h2>
+                <p>{props.article.rating ? <Stars rating={props.article.rating}/> : 'Keine Rezensionen'}</p>
+                <p className='Article__Text__Price'>{parseFloat(props.article.price).toFixed(2)} Euro</p>
+                <ShoppingCartButton article={props.article}>In den Warenkorb</ShoppingCartButton>
             </div>
-            <ShoppingCartButton article={props.article}>&#128722;</ShoppingCartButton>
-        </div>
+        </article>
     )
 }
 

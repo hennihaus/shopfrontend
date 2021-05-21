@@ -9,7 +9,7 @@ function ShoppingCartButton(props) {
     if ((!articleInShoppingCart && props.article.quantity) || (articleInShoppingCart && articleInShoppingCart.selectedQuantity < props.article.quantity)) {
         button = <Button click={() => props.addToShoppingCart(props.article)}>{props.children}</Button>
     } else {
-        button = <div>Ausverkauft!</div>
+        button = <div onClick={event => event.stopPropagation()}>Ausverkauft</div>
     }
     return (
         <>

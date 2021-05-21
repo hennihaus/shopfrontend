@@ -1,0 +1,68 @@
+.Navbar {
+    background-color: #189ca4;
+}
+
+.Navbar__Main {
+    list-style: none;
+    margin: 0;
+}
+
+.Navbar__Main li > a {
+    padding: 0.6em 2rem;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.Navbar__Main > li {
+    margin-left: 0;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.6);
+}
+
+.Navbar__Main a {
+
+}
+
+.Navbar__Main a:link {
+    text-decoration: none;
+}
+
+.Navbar__Main a:link, .Navbar__Main a:visited {
+    color: #fff;
+}
+
+.Navbar__Main a:hover, .Navbar__Main a:focus, .Navbar__Main a:active {
+    background-color: #96cfbf;
+    color: #fff;
+}
+
+@media screen and (min-width: 40em) {
+    .Navbar {
+        position: sticky;
+        top: 0;
+    }
+
+    .Navbar__Main {
+        padding: 0 1.8rem;
+        overflow: hidden;
+    }
+
+    .Navbar__Main > li {
+        float: left;
+        display: inline-block;
+        border: none;
+        width: auto;
+    }
+
+    .Navbar__Main > li > a {
+        padding: 0.7em 1.2rem;
+        display: inline-block;
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .Navbar__Main {
+        padding: 0;
+    }
+}

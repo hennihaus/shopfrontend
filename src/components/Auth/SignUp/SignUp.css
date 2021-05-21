@@ -1,0 +1,56 @@
+.SignUp__Formset {
+    margin: 0.5em 0;
+}
+
+.SignUp__Formset label, .SignUp__Formset input {
+    display: inline-block;
+}
+
+.SignUp__Formset label {
+    width: 100%;
+    padding-right: 2%;
+    vertical-align: center;
+}
+
+.SignUp__Formset input {
+    width: 100%;
+    border: 1px solid #96cfbf;
+    padding: 0.4em;
+}
+
+.SignUp__Formset input:required {
+    padding-right: 3%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 4%;
+}
+
+.SignUp__Submit {
+    float: right;
+    border: 1px solid #96cfbf;
+    padding: 0.4em 1em;
+    margin-right: 1.2rem;
+    color: #fff;
+    background-color: #189ca4;
+}
+
+.SignUp__Submit:hover {
+    background-color: #397367;
+}
+
+@media screen and (min-width: 30em) {
+    .SignUp__Formset label {
+        width: 30%;
+        text-align: right;
+    }
+
+    .SignUp__Formset input {
+        width: 68%;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .SignUp {
+        max-width: 40em;
+    }
+}

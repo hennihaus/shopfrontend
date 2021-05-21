@@ -1,4 +1,7 @@
 import './App.css';
+import './styles/atmosphere.css';
+import './styles/normalize.css';
+import './styles/layout.css';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Layout from "./components/Layout/Layout";
 import ArticleList from "./components/Articles/Articles";

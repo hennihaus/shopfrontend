@@ -1,4 +1,4 @@
-import {updateState} from "../util/state-util";
+import {updateState} from "../common/util";
 import {
     ADD_TO_SHOPPING_CART,
     BUY_ARTICLES_FAILED,

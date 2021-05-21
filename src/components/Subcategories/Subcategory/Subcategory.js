@@ -19,7 +19,9 @@ class Subcategory extends Component {
         if (filteredSubcategory) {
             subcategory = <li className='Subcategory'
                               onClick={(event) => this.handleSubcategoryClick(event, filteredSubcategory._id)}>
-                {filteredSubcategory.name}
+                <a href='#'>
+                    {filteredSubcategory.name}
+                </a>
             </li>
         }
         return (

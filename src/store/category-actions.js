@@ -1,4 +1,4 @@
-import axios from "../api/axios-url";
+import axios from "../common/axios-url";
 
 export const LOAD_CATEGORIES_SUCCESS = 'LOAD_CATEGORIES_SUCCESS';
 export const LOAD_CATEGORIES_FAILED = 'LOAD_CATEGORIES_FAILED';

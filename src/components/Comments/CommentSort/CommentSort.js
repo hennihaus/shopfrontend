@@ -1,5 +1,5 @@
 import './CommentSort.css';
-import {commentSortOrder} from "../../../model/commentSortOrder";
+import {commentSortOrder} from "../../../common/model";
 import {setCommentSortOrder} from "../../../store/article-actions";
 import {connect} from "react-redux";
 

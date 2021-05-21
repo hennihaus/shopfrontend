@@ -9,7 +9,7 @@ class Category extends Component {
     render() {
         return (
             <li className='Category' onClick={() => this.props.selectCategory(this.props.category._id)}>
-                {this.props.category.name}
+                <a href='#'>{this.props.category.name}</a>
                 {
                     this.props.errorLoadingSubcategories ? null :
                         <Subcategories categoryId={this.props.category._id}

@@ -3,6 +3,7 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import {loadOrders} from "../../store/order-actions";
 import Order from "./Order/Order";
+import Title from "../UI/Title/Title";
 
 class Orders extends Component {
 
@@ -27,7 +28,7 @@ class Orders extends Component {
 
         return (
             <div className='Orders'>
-                <h3>Bestellungen</h3>
+                <Title>Bestellungen</Title>
                 {orders}
             </div>
         )

@@ -1,0 +1,48 @@
+.Categories {
+    list-style: none;
+    margin: 0;
+}
+
+.Categories li {
+    position: relative;
+    width: 15rem;
+}
+
+.Categories li:hover > ul {
+    display: inline;
+}
+
+.Categories li {
+    background-color: #189ca4;
+}
+
+.Categories a {
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 300;
+    padding: 0.6em 2rem;
+    display: block;
+}
+
+.Categories a:link {
+    text-decoration: none;
+}
+
+.Categories a:link, .Categories a:visited {
+    color: #fff;
+}
+
+.Categories a:hover, .Categories a:focus, .Categories a:active {
+    background-color: #96cfbf;
+    color: #fff;
+}
+
+.Categories__Second {
+    position: absolute;
+    top: calc(1.8rem * 1.5 + 1.2em);
+    width: 15rem;
+    list-style: none;
+    margin: 0;
+    display: none;
+}
+
