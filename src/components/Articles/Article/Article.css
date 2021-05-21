@@ -2,7 +2,7 @@
     border: 1px dashed #ddd;
     padding: 0.5em 1em;
     margin: 0 1rem 1em 1rem;
-    flex: 0 1 calc(27.9rem + 1.5rem);
+    flex: 1 1 calc(27.9rem + 1.5rem);
 }
 
 .Article:hover {
@@ -13,4 +13,11 @@
     margin: 0 0 1em 0;
     cursor: pointer;
     display: block;
+}
+
+@media screen and (min-width: 40em) {
+
+    .Article {
+        flex-grow: 0;
+    }
 }

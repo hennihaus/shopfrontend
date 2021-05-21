@@ -2,20 +2,38 @@ import './CommentSort.css';
 import {commentSortOrder} from "../../../common/model";
 import {setCommentSortOrder} from "../../../store/article-actions";
 import {connect} from "react-redux";
+import {Component} from "react";
 
-function CommentSort(props) {
-    return (
-        <div className='CommentSort'>
-            <label>Sortieren nach:</label>
-            <select onChange={event => props.setCommentSortOrder(event.target.value)}
-                    defaultValue={props.commentSortOrder}>
-                <option value={commentSortOrder.DATE_ASC}>Datum aufsteigend</option>
-                <option value={commentSortOrder.DATE_DESC}>Datum absteigend</option>
-                <option value={commentSortOrder.RATE_ASC}>Bewertung aufsteigend</option>
-                <option value={commentSortOrder.RATE_DESC}>Bewertung absteigend</option>
-            </select>
-        </div>
-    )
+class CommentSort extends Component {
+
+    handleClick = (event, order) => {
+        event.preventDefault();
+        this.props.setCommentSortOrder(order);
+    }
+
+    render() {
+        return (
+            <ul className='CommentSort'>
+                <li>
+                    <a href='#'>Sortieren</a>
+                    <ul className='CommentSort__Second'>
+                        <li onClick={event => this.handleClick(event, commentSortOrder.DATE_ASC)}>
+                            <a href='#'>Datum aufsteigend</a>
+                        </li>
+                        <li onClick={event => this.handleClick(event, commentSortOrder.DATE_DESC)}>
+                            <a href='#'>Datum absteigend</a>
+                        </li>
+                        <li onClick={event => this.handleClick(event, commentSortOrder.RATE_ASC)}>
+                            <a href='#'>Bewertung aufsteigend</a>
+                        </li>
+                        <li onClick={event => this.handleClick(event, commentSortOrder.RATE_DESC)}>
+                            <a href='#'>Bewertung absteigend</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        )
+    }
 }
 
 const mapStateToProps = state => {

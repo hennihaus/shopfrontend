@@ -2,7 +2,6 @@ import './CommentForm.css';
 import {Component} from "react";
 import {createComment} from "../../../store/article-actions";
 import {connect} from "react-redux";
-import Button from "../../UI/Button/Button";
 
 class CommentForm extends Component {
 
@@ -12,35 +11,48 @@ class CommentForm extends Component {
         comment: ''
     }
 
-    createComment = () => {
-        if (this.state.comment.length) {
-            const comment = {
-                comment: this.state.comment,
-                rating: this.state.rating,
-                articleId: this.props.articleId,
-                date: new Date().toLocaleDateString('de', {day: 'numeric', month: 'numeric', year: 'numeric'})
-            };
-            this.props.createComment(this.props.articleId, comment);
-        }
+    createComment = (event) => {
+        event.preventDefault();
+        const comment = {
+            comment: this.state.comment,
+            rating: this.state.rating,
+            articleId: this.props.articleId,
+            date: new Date().toLocaleDateString('de', {day: 'numeric', month: 'numeric', year: 'numeric'})
+        };
+        this.props.createComment(this.props.articleId, comment);
     }
 
     render() {
         return (
             <div className='CommentForm'>
                 <h2>Rezension schreiben</h2>
-                <label>Rating</label>
-                <select onChange={(event) => this.setState({rating: +event.target.value})}>
-                    {
-                        this.state.rateOptions.map((rateOption, index) => <option key={index}
-                                                                                  value={rateOption}>{rateOption}</option>)
-                    }
-                </select>
-                <label>Kommentar</label>
-                <textarea onChange={event => this.setState({comment: event.target.value})} value={this.state.comment}>
+                <form className='CommentForm__Form' onSubmit={(event) => this.createComment(event)}>
+                    <fieldset>
+                        <div className='CommentForm__Formset'>
+                            <label>Sterne (0-5)</label>
+                            <input type='number'
+                                   onChange={(event) => this.setState({rating: +event.target.value})}
+                                   value={this.state.rating}
+                                   required
+                                   min='0'
+                                   max='5'
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='CommentForm__Formset'>
+                            <label>Kommentar</label>
+                            <textarea onChange={event => this.setState({comment: event.target.value})}
+                                      value={this.state.comment}
+                                      required
+                                      style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            >
 
-                </textarea>
-                <Button click={() => this.createComment()}>Rezension absenden</Button>
-                <div>{this.props.createCommentMessage}</div>
+                            </textarea>
+                        </div>
+                        <input className='CommentForm__Submit' type='submit' value='Absenden'/>
+                    </fieldset>
+                </form>
+                <p>{this.props.createCommentMessage}</p>
             </div>
         )
     }

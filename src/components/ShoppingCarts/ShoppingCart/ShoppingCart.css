@@ -1,0 +1,22 @@
+.ShoppingCart {
+    border: 1px dashed #ddd;
+    padding: 0.5rem 1em;
+    margin: 0 1rem 1em 1rem;
+    flex: 1 1 calc(27.9rem + 1.5rem);
+}
+
+.ShoppingCart:hover {
+    border: 1px solid #da0545;
+}
+
+.ShoppingCart__Image {
+    margin: 0 0 1em 0;
+    display: block;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 40em){
+    .ShoppingCart {
+        flex-grow: 0;
+    }
+}

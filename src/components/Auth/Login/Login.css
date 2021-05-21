@@ -18,6 +18,11 @@
     padding: 0.4em;
 }
 
+
+.Login__Formset input:focus {
+    background-color: rgba(150, 207, 191, 0.3);
+}
+
 .Login__Formset input:required {
     padding-right: 3%;
     background-repeat: no-repeat;

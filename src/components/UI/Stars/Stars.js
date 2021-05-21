@@ -19,9 +19,9 @@ class Stars extends Component {
         return (
             <>
                 {
-                    this.state.stars.map((star, index) => <span key={index}>{star}</span>)
+                    this.state.stars.map((star, index) => <>{star}</>)
                 }
-                <span> ({parseFloat(this.props.rating).toFixed(2)}/5)</span>
+                <> ({parseFloat(this.props.rating).toFixed(2)}/5)</>
             </>
         )
     }
