@@ -1,0 +1,47 @@
+.CommentSort {
+    list-style: none;
+    margin: 0;
+}
+
+.CommentSort li {
+    position: relative;
+    width: 15rem;
+}
+
+.CommentSort li:hover > ul {
+    display: inline;
+}
+
+.CommentSort li {
+    background-color: #189ca4;
+}
+
+.CommentSort a {
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 300;
+    padding: 0.6em 2rem;
+    display: block;
+}
+
+.CommentSort a:link {
+    text-decoration: none;
+}
+
+.CommentSort a:link, .CommentSort a:visited {
+    color: #fff;
+}
+
+.CommentSort a:hover, .CommentSort a:focus, .CommentSort a:active {
+    background-color: #96cfbf;
+    color: #fff;
+}
+
+.CommentSort__Second {
+    position: absolute;
+    top: calc(1.8rem * 1.5 + 1.2em);
+    width: 15rem;
+    list-style: none;
+    margin: 0;
+    display: none;
+}

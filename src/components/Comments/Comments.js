@@ -27,14 +27,18 @@ class Comments extends Component {
             comments = <div>Fehler beim Laden der Rezension!</div>
         }
         return (
-            <div className='Comments'>
+            <>
                 <CommentForm articleId={this.props.articleId} createCommentMessage={this.props.createCommentMessage}/>
-                <h2>Rezensionen</h2>
-                {
-                    article.comments && article.comments.length ? <CommentSort/> : null
-                }
-                {comments}
-            </div>
+                <div className='Comments__Header'>
+                    <h2>Rezensionen</h2>
+                    {
+                        article.comments && article.comments.length ? <CommentSort/> : null
+                    }
+                </div>
+                <div className='Comments__Wrapper'>
+                    {comments}
+                </div>
+            </>
         )
     }
 }

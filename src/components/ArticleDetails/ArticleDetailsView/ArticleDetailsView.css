@@ -1,0 +1,29 @@
+.ArticleDetailsView__Wrapper {
+    margin: 0 1rem 1.6rem 1rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+.ArticleDetailsView__Wrapper__Description, .ArticleDetailsView__Wrapper__Image, .ArticleDetailsView__Wrapper__Details {
+    grid-column: 1 / 3;
+}
+
+@media screen and (min-width: 40em) {
+    .ArticleDetailsView__Wrapper__Image {
+        grid-column: 1 / 2;
+    }
+
+    .ArticleDetailsView__Wrapper__Details {
+        margin-left: 5em;
+        grid-column: 2 / 3;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .ArticleDetailsView__Wrapper {
+        grid-template-columns: 40% 60%;
+    }
+}

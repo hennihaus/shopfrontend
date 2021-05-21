@@ -1,3 +1,7 @@
+.CommentForm__Form {
+    margin: 0.5em 0;
+}
+
 .SignUp__Formset {
     margin: 0.5em 0;
 }
@@ -16,6 +20,10 @@
     width: 100%;
     border: 1px solid #96cfbf;
     padding: 0.4em;
+}
+
+.SignUp__Formset input:focus {
+    background-color: rgba(150, 207, 191, 0.3);
 }
 
 .SignUp__Formset input:required {

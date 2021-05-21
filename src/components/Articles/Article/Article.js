@@ -7,10 +7,10 @@ function Article(props) {
     return (
         <article className='Article' onClick={() => props.history.push(`articles/${props.article._id}`)}>
             <img className='Article__Image' src={props.article.href} alt={props.article.shortdescription} onError={(event => event.target.src = '/assets/image_not_found.png')}/>
-            <div className='Article__Text'>
+            <div>
                 <h2>{props.article.name}</h2>
                 <p>{props.article.rating ? <Stars rating={props.article.rating}/> : 'Keine Rezensionen'}</p>
-                <p className='Article__Text__Price'>{parseFloat(props.article.price).toFixed(2)} Euro</p>
+                <p>{parseFloat(props.article.price).toFixed(2)} Euro</p>
                 <ShoppingCartButton article={props.article}>In den Warenkorb</ShoppingCartButton>
             </div>
         </article>

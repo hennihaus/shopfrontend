@@ -1,7 +1,6 @@
 import './ShoppingCarts.css';
 import {Component} from "react";
 import {connect} from "react-redux";
-import Button from "../UI/Button/Button";
 import {buyArticles} from "../../store/shopping-cart-actions";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Title from "../UI/Title/Title";
@@ -27,18 +26,26 @@ class ShoppingCarts extends Component {
             articles = this.props.articles.map((article, index) => (
                 <ShoppingCart key={article._id} article={article} index={index}/>
             ))
-        } else {
-            articles = <div>Keine Artikel vorhanden!</div>
         }
         return (
             <section className='ShoppingCarts'>
-                <Title>Warenkorb</Title>
-                {articles}
-                <p>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} Euro</p>
-                <Button click={() => this.buyArticles()}>Bestellen</Button>
-                {
-                    this.props.errorBuyingArticles ? <div>Fehler beim Kaufen der Artikel</div> : null
-                }
+                <div className='ShoppingCarts__Header'>
+                    <Title>Warenkorb</Title>
+                    {
+                        this.props.articles.length ? <div>
+                            <h1>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} Euro</h1>
+                            <button className='ShoppingCarts__Header__Button'
+                                    onClick={() => this.buyArticles()}>Bestellen
+                            </button>
+                            {
+                                this.props.errorBuyingArticles ? <p>Fehler beim Kaufen der Artikel</p> : null
+                            }
+                        </div> : <h1>Einkaufswagen ist leer</h1>
+                    }
+                </div>
+                <div className='ShoppingCarts__Section'>
+                    {articles}
+                </div>
             </section>
         )
     }

@@ -11,9 +11,13 @@ body {
     background-color: #efefef;
 }
 
-h1, h2, h3 {
+button {
+    font-family: 'Roboto', 'sans-serif' !important;
+}
+
+h1, h2, h3, legend {
     font-family: 'Raleway', 'sans-serif';
-    font-weight: 500;
+    font-weight: 500 !important;
     line-height: 130%;
     color: #da0545;
 }
@@ -38,7 +42,7 @@ fieldset {
 legend {
     color: #da0545 !important;
     font-size: 2.2rem;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 input[type='number']:out-of-range {

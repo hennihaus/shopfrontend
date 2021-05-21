@@ -1,0 +1,43 @@
+.Comment__Formset {
+    margin: 0.5em 0;
+}
+
+.Comment__Formset label, .Comment__Formset__Rating, .Comment__Formset textarea {
+    display: inline-block;
+}
+
+.Comment__Formset label {
+    width: 100%;
+    padding-right: 2%;
+    vertical-align: center;
+}
+
+.Comment__Formset__Rating, .Comment__Formset textarea {
+    width: 100%;
+    border: 1px solid #96cfbf;
+    padding: 0.4em;
+    background-color: #fff;
+}
+
+.Comment__Formset textarea {
+    min-height: 8em;
+    resize: vertical;
+}
+
+@media screen and (min-width: 30em) {
+    .Comment__Formset label {
+        width: 30%;
+        text-align: right;
+    }
+
+    .Comment__Formset__Rating, .Comment__Formset textarea {
+        width: 68%;
+    }
+}
+
+/*@media screen and (min-width: 40em) {*/
+/*    .Comment {*/
+/*        max-width: 40em;*/
+/*    }*/
+/*}*/
+
