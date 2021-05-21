@@ -1,0 +1,22 @@
+.Layout {
+    background-color: #fff;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.Layout__Content {
+    padding: 2rem;
+}
+
+@media screen and (min-width: 40em) {
+    .Layout__Content {
+        padding: 3rem;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .Layout__Content {
+        padding: 3rem 1.2rem;
+    }
+}

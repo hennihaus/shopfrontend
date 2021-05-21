@@ -1,4 +1,4 @@
-import axios from "../api/axios-url";
+import axios from "../common/axios-url";
 
 export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_ORDERS_FAILED = 'LOAD_ORDERS_FAILED';

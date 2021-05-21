@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import Button from "../UI/Button/Button";
 import {buyArticles} from "../../store/shopping-cart-actions";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
+import Title from "../UI/Title/Title";
 
 class ShoppingCarts extends Component {
 
@@ -31,7 +32,7 @@ class ShoppingCarts extends Component {
         }
         return (
             <section className='ShoppingCarts'>
-                <h2>Warenkorb</h2>
+                <Title>Warenkorb</Title>
                 {articles}
                 <p>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} Euro</p>
                 <Button click={() => this.buyArticles()}>Bestellen</Button>

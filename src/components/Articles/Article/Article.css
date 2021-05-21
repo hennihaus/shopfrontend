@@ -1,0 +1,16 @@
+.Article {
+    border: 1px dashed #ddd;
+    padding: 0.5em 1em;
+    margin: 0 1rem 1em 1rem;
+    flex: 0 1 calc(27.9rem + 1.5rem);
+}
+
+.Article:hover {
+    border: 1px solid #da0545;
+}
+
+.Article__Image {
+    margin: 0 0 1em 0;
+    cursor: pointer;
+    display: block;
+}

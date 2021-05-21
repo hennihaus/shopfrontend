@@ -2,7 +2,7 @@ import './Login.css';
 import {Component} from "react";
 import {login} from "../../../store/auth-actions";
 import {connect} from "react-redux";
-import Button from "../../UI/Button/Button";
+import Title from "../../UI/Title/Title";
 
 class Login extends Component {
 
@@ -11,25 +11,46 @@ class Login extends Component {
         pw: ''
     }
 
-    signIn = () => {
+    signIn = (event) => {
+        event.preventDefault();
         const userData = {
             pw: this.state.pw,
             email: this.state.email
         };
-
         this.props.login(userData);
     }
 
     render() {
         return (
             <div className='Login'>
-                <h2>Login</h2>
-                <label>E-Mail</label>
-                <input onChange={event => this.setState({email: event.target.value})} value={this.state.email}/>
-                <label>Passwort</label>
-                <input onChange={event => this.setState({pw: event.target.value})} value={this.state.pw}/>
-                <Button click={() => this.signIn()}>Login</Button>
-                <div>{this.props.signInMessage}</div>
+                <Title>Login</Title>
+                <form onSubmit={event => this.signIn(event)}>
+                    <fieldset>
+                        <legend>Formular</legend>
+                        <div className='Login__Formset'>
+                            <label>E-Mail</label>
+                            <input onChange={event => this.setState({email: event.target.value})}
+                                   value={this.state.email}
+                                   placeholder='Ihre E-Mail'
+                                   type='email'
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <div className='Login__Formset'>
+                            <label>Passwort</label>
+                            <input onChange={event => this.setState({pw: event.target.value})}
+                                   value={this.state.pw}
+                                   placeholder='Ihr Passwort'
+                                   type='password'
+                                   required
+                                   style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
+                            />
+                        </div>
+                        <input className='Login__Submit' type='submit' value='Login'/>
+                    </fieldset>
+                </form>
+                <p>{this.props.signInMessage}</p>
             </div>
         )
     }

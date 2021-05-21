@@ -1,10 +1,13 @@
 import "./Footer.css";
+import Content from "../../UI/Content/Content";
 
 function Footer(props) {
     return (
-        <div className='Footer'>
-            Footer
-        </div>
+        <footer className='Footer'>
+            <Content>
+                <p className='Footer__Content'>Footer</p>
+            </Content>
+        </footer>
     )
 }
 

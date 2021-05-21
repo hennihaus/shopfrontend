@@ -23,12 +23,17 @@ class Categories extends Component {
         }
 
         return (
-            <div className='Categories'>
-                <ul>
-                    <li onClick={() => this.props.selectedSubcategory(null, null)}>Alle Kategorien</li>
-                    {categories}
-                </ul>
-            </div>
+            <ul className='Categories'>
+                <li className='Categories__Parent'>
+                    <a href='#'>Kategorien</a>
+                    <ul className='Categories__Second'>
+                        <li onClick={() => this.props.selectedSubcategory(null, null)}>
+                            <a href='#'>Alle</a>
+                        </li>
+                        {categories}
+                    </ul>
+                </li>
+            </ul>
         );
     }
 }

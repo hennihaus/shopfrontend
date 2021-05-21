@@ -1,0 +1,56 @@
+.Login__Formset {
+    margin: 0.5em 0;
+}
+
+.Login__Formset label, .Login__Formset input {
+    display: inline-block;
+}
+
+.Login__Formset label {
+    width: 100%;
+    padding-right: 2%;
+    vertical-align: center;
+}
+
+.Login__Formset input {
+    width: 100%;
+    border: 1px solid #96cfbf;
+    padding: 0.4em;
+}
+
+.Login__Formset input:required {
+    padding-right: 3%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 4%;
+}
+
+.Login__Submit {
+    float: right;
+    border: 1px solid #96cfbf;
+    padding: 0.4em 1em;
+    margin-right: 1.2rem;
+    color: #fff;
+    background-color: #189ca4;
+}
+
+.Login__Submit:hover {
+    background-color: #397367;
+}
+
+@media screen and (min-width: 30em) {
+    .Login__Formset label {
+        width: 30%;
+        text-align: right;
+    }
+
+    .Login__Formset input {
+        width: 68%;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .Login {
+        max-width: 40em;
+    }
+}

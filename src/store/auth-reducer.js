@@ -1,4 +1,4 @@
-import {updateState} from "../util/state-util";
+import {updateState} from "../common/util";
 import {
     SIGN_IN_FAILED,
     SIGN_IN_SUCCESS,

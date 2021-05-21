@@ -1,5 +1,5 @@
-import {updateState} from "../util/state-util";
 import {LOAD_ORDERS_FAILED, LOAD_ORDERS_SUCCESS} from "./order-actions";
+import {updateState} from "../common/util";
 
 const initialState = {};
 

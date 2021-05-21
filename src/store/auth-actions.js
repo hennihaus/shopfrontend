@@ -1,4 +1,4 @@
-import axios from "../api/axios-url";
+import axios from "../common/axios-url";
 
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILED = 'SIGN_UP_FAILED';

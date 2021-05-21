@@ -1,4 +1,4 @@
-import {updateState} from "../util/state-util";
+import {updateState} from "../common/util";
 import {
     LOAD_CATEGORIES_FAILED,
     LOAD_CATEGORIES_SUCCESS,
