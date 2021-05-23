@@ -1,0 +1,35 @@
+.Order {
+    border: 1px solid #ddd;
+    margin: 0 0 0.75em 0;
+}
+
+.Order:hover, .Order:focus, .Order:active {
+    cursor: pointer;
+    border: 1px solid #da0545;
+}
+
+.Order__Wrapper {
+    display: grid;
+    grid-template-columns: 60% 22% 17%;
+}
+
+
+.Order__Wrapper__Details {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1 / 4;
+}
+
+@media screen and (min-width: 30em) {
+    .Order__Wrapper {
+        grid-template-columns: 50% 40% 10%;
+    }
+
+    .Order__Wrapper {
+        padding: 0 0 0 1.1rem;
+    }
+
+    .Order__Wrapper__Order_Nr:before {
+        content: 'Bestell';
+    }
+}

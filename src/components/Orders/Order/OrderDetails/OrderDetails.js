@@ -1,16 +1,19 @@
 import './OrderDetails.css';
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
 
 function OrderDetails(props) {
     const article = props.articles.find(article => article._id === props.orderArticle.articleId);
     return (
-        <div className='OrderListDetails'>
-            <img src={article.href} alt={article.shortdescription}
-                 onClick={() => props.history.push(`/articles/${props.orderArticle.articleId}`)}/>
-            <div>{article.name}</div>
-            <div>Stück: {props.orderArticle.quantity}</div>
-            <div>Preis: {parseFloat(props.orderArticle.price).toFixed(2)} Euro/Stck.</div>
+        <div className='OrderDetails'>
+            <img className='OrderDetails__Image'
+                 src={article.href} alt={article.shortdescription}
+                 onError={event => event.target.src = '/assets/image_not_found.png'}
+            />
+            <div>
+                <p>{article.name}</p>
+                <p>Stück: {props.orderArticle.quantity}</p>
+                <p>Preis: {parseFloat(props.orderArticle.price).toFixed(2)} €/Stck.</p>
+            </div>
         </div>
     )
 }
@@ -21,4 +24,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(withRouter(OrderDetails));
+export default connect(mapStateToProps)(OrderDetails);

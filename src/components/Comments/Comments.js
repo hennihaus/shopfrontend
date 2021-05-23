@@ -30,7 +30,7 @@ class Comments extends Component {
             <>
                 <CommentForm articleId={this.props.articleId} createCommentMessage={this.props.createCommentMessage}/>
                 <div className='Comments__Header'>
-                    <h2>Rezensionen</h2>
+                    <h2>Rezensionen { article.comments && article.comments.length ? <span>({article.comments.length})</span> : null}</h2>
                     {
                         article.comments && article.comments.length ? <CommentSort/> : null
                     }

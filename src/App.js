@@ -4,25 +4,25 @@ import './styles/normalize.css';
 import './styles/layout.css';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Layout from "./components/Layout/Layout";
-import ArticleList from "./components/Articles/Articles";
-import ShoppingCartList from "./components/ShoppingCarts/ShoppingCarts";
-import OrderList from "./components/Orders/Orders";
 import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import Login from "./components/Auth/Login/Login";
 import {useEffect} from "react";
 import {loadArticles} from "./store/article-actions";
 import {connect} from "react-redux";
+import Articles from "./components/Articles/Articles";
+import Orders from "./components/Orders/Orders";
+import ShoppingCarts from "./components/ShoppingCarts/ShoppingCarts";
 
 function App(props) {
     useEffect(() => props.loadArticles());
     const routes = (
         <Switch>
-            <Route path='/' component={ArticleList} exact/>
+            <Route path='/' component={Articles} exact/>
             <Route path='/signup' component={SignUp}/>
             <Route path='/login' component={Login}/>
-            <Route path='/orders' component={OrderList}/>
-            <Route path='/shoppingcart' component={ShoppingCartList}/>
+            <Route path='/orders' component={Orders}/>
+            <Route path='/shoppingcart' component={ShoppingCarts}/>
             <Route path='/articles/:id' component={ArticleDetails}/>
             <Redirect to='/'/>
         </Switch>

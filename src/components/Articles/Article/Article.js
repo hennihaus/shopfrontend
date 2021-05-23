@@ -10,7 +10,7 @@ function Article(props) {
             <div>
                 <h2>{props.article.name}</h2>
                 <p>{props.article.rating ? <Stars rating={props.article.rating}/> : 'Keine Rezensionen'}</p>
-                <p>{parseFloat(props.article.price).toFixed(2)} Euro</p>
+                <p>{parseFloat(props.article.price).toFixed(2)} €</p>
                 <ShoppingCartButton article={props.article}>In den Warenkorb</ShoppingCartButton>
             </div>
         </article>

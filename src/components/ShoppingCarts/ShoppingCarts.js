@@ -33,7 +33,7 @@ class ShoppingCarts extends Component {
                     <Title>Warenkorb</Title>
                     {
                         this.props.articles.length ? <div>
-                            <h1>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} Euro</h1>
+                            <h1>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} €</h1>
                             <button className='ShoppingCarts__Header__Button'
                                     onClick={() => this.buyArticles()}>Bestellen
                             </button>

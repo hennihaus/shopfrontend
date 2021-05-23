@@ -7,7 +7,7 @@ import {withRouter} from "react-router-dom";
 function ShoppingCart(props) {
     return (
         <article className='ShoppingCart'  onClick={() => props.history.push(`articles/${props.article._id}`)}>
-            <img className='ShoppingCart__Image' src={props.article.href} alt={props.article.shortdescription}/>
+            <img className='ShoppingCart__Image' src={props.article.href} alt={props.article.shortdescription} onError={event => event.target.src = '/assets/image_not_found.png'}/>
             <div>
                 <h2>{props.article.name}</h2>
                 <p>Preis/Stück: {parseFloat(props.article.price).toFixed(2)} Euro</p>
