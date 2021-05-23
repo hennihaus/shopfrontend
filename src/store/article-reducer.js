@@ -107,7 +107,7 @@ const sortComments = (order, comments) => {
         default:
             return comments;
     }
-}
+};
 
 const articleReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -128,6 +128,6 @@ const articleReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export default articleReducer;

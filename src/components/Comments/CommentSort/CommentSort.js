@@ -36,16 +36,10 @@ class CommentSort extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        commentSortOrder: state.articleReducer.commentSortOrder
-    }
-}
-
 const mapDispatchToProps = dispatch => {
     return {
         setCommentSortOrder: commentSortOrder => dispatch(setCommentSortOrder(commentSortOrder))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentSort);
+export default connect(null, mapDispatchToProps)(CommentSort);

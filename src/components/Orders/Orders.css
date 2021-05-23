@@ -1,1 +1,4 @@
-
+.Orders__Header {
+    display: flex;
+    justify-content: space-between;
+}

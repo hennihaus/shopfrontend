@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {loadOrders} from "../../store/order-actions";
 import Order from "./Order/Order";
 import Title from "../UI/Title/Title";
+import OrderSort from "./OrderSort/OrderSort";
 
 class Orders extends Component {
 
@@ -28,7 +29,10 @@ class Orders extends Component {
 
         return (
             <div className='Orders'>
-                <Title>Bestellungen</Title>
+                <div className='Orders__Header'>
+                    <Title>Bestellungen</Title>
+                    <OrderSort/>
+                </div>
                 {orders}
             </div>
         )
