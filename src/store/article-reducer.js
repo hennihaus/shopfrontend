@@ -11,7 +11,9 @@ import {convertToDate, updateState} from "../common/util";
 import {commentSortOrder} from "../common/model";
 
 const initialState = {
-    commentSortOrder: commentSortOrder.DATE_DESC
+    commentSortOrder: commentSortOrder.DATE_DESC,
+    articles: null,
+    errorLoadingArticles: null
 };
 
 const setArticles = (state, action) => updateState(state, {
@@ -91,7 +93,7 @@ const setCommentSortOrder = (state, action) => {
     return updateState(state, {
         articles,
         commentSortOrder: +action.payload.commentSortOrder
-    })
+    });
 };
 
 const sortComments = (order, comments) => {

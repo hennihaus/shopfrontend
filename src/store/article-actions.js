@@ -88,7 +88,7 @@ const createCommentFailed = (articleId, createCommentMessage) => {
 
 export const createComment = (articleId, comment) => {
     return dispatch => {
-        axios.post('/shop/comment/', comment, {withCredentials: true})
+        axios.post('/shop/comment', comment, {withCredentials: true})
             .then(response => dispatch(setComment(articleId, comment, response.data)))
             .catch(error => {
                 console.error(error);
@@ -103,5 +103,5 @@ export const setCommentSortOrder = commentSortOrder => {
         payload: {
             commentSortOrder
         }
-    }
-}
+    };
+};

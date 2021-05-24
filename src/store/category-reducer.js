@@ -8,7 +8,14 @@ import {
     SELECT_SUBCATEGORY
 } from "./category-actions";
 
-const initialState = {};
+const initialState = {
+    categories: null,
+    errorLoadingCategories: null,
+    subcategories: null,
+    errorLoadingSubcategories: null,
+    selectedCategoryId: null,
+    selectedSubcategoryId: null
+};
 
 const setCategories = (state, action) => updateState(state, {
     categories: [...action.payload.categories],
@@ -55,6 +62,6 @@ const categoryReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export default categoryReducer;

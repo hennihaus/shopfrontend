@@ -1,12 +1,12 @@
 .Article {
-    border: 1px dashed #ddd;
+    border: 1px dashed var(--border-color);
     padding: 0.5em 1em;
     margin: 0 1rem 1em 1rem;
     flex: 1 1 calc(27.9rem + 1.5rem);
 }
 
 .Article:hover {
-    border: 1px solid #da0545;
+    border: 1px solid var(--warn-color);
 }
 
 .Article__Image {

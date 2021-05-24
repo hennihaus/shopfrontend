@@ -52,8 +52,8 @@ const signInFailed = signInMessage => {
         payload: {
             signInMessage
         }
-    }
-}
+    };
+};
 
 export const login = userData => {
     return async dispatch => {

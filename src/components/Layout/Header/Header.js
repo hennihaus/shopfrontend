@@ -1,14 +1,12 @@
 import './Header.css';
-import {Link} from "react-router-dom";
 import Content from "../../UI/Content/Content";
+import {NavLink} from "react-router-dom";
 
-function Header(props) {
+function Header() {
     return (
         <header className='Header'>
             <Content>
-                <div className='Header__Logo'>
-                    <Link to='/'>E-Shop</Link>
-                </div>
+                <NavLink className='Header__Logo' to='/'>E-Shop</NavLink>
             </Content>
         </header>
     )

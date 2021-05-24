@@ -2,62 +2,62 @@
     grid-column: 1 / 3;
 }
 
-.CommentForm__Formset {
+.CommentForm__Form__Formset {
     margin: 0.5em 0;
 }
 
-.CommentForm__Formset label, .CommentForm__Formset input, .CommentForm__Formset textarea {
+.CommentForm__Form__Formset__Label, .CommentForm__Form__Formset__Input, .CommentForm__Form__Formset__Textarea {
     display: inline-block;
 }
 
-.CommentForm__Formset label {
+.CommentForm__Form__Formset__Label {
     width: 100%;
     padding-right: 2%;
     vertical-align: center;
 }
 
-.CommentForm__Formset input, .CommentForm__Formset textarea {
+.CommentForm__Form__Formset__Input, .CommentForm__Form__Formset__Textarea {
     width: 100%;
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em;
 }
 
-.CommentForm__Formset textarea {
+.CommentForm__Form__Formset__Textarea {
     min-height: 8em;
     resize: vertical;
 }
 
-.CommentForm__Formset input:focus, .CommentForm__Formset textarea:focus {
-    background-color: rgba(150, 207, 191, 0.3);
+.CommentForm__Form__Formset__Input:focus, .CommentForm__Form__Formset__Textarea:focus {
+    background-color: var(--input-focus-color);
 }
 
-.CommentForm__Formset input:required, .CommentForm__Formset textarea:required {
+.CommentForm__Form__Formset__Input:required, .CommentForm__Form__Formset__Textarea:required {
     padding-right: 3%;
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 4%;
 }
 
-.CommentForm__Submit {
+.CommentForm__Form__Submit {
     float: right;
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em 1em;
     margin-right: 1.2rem;
-    color: #fff;
-    background-color: #189ca4;
+    color: var(--primary-secondary-font-color);
+    background-color: var(--primary-color);
 }
 
-.CommentForm__Submit:hover {
-    background-color: #397367;
+.CommentForm__Form__Submit:hover {
+    background-color: var(--submit-hover-color);
 }
 
 @media screen and (min-width: 30em) {
-    .CommentForm__Formset label {
+    .CommentForm__Form__Formset__Label {
         width: 30%;
         text-align: right;
     }
 
-    .CommentForm__Formset input, .CommentForm__Formset textarea {
+    .CommentForm__Form__Formset__Input, .CommentForm__Form__Formset__Textarea {
         width: 68%;
     }
 }

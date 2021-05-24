@@ -3,20 +3,11 @@
     margin: 0;
 }
 
-.OrderSort li {
+.OrderSort__List__Item {
+    background-color: var(--primary-color);
+    color: var(--primary-secondary-font-color);
     position: relative;
     width: 15rem;
-}
-
-.OrderSort li:hover > ul {
-    display: inline;
-}
-
-.OrderSort li {
-    background-color: #189ca4;
-}
-
-.OrderSort a {
     font-size: 1.8rem;
     text-align: center;
     font-weight: 300;
@@ -24,21 +15,18 @@
     display: block;
 }
 
-.OrderSort a:link {
-    text-decoration: none;
+.OrderSort__List__Item:hover > ul {
+    display: inline;
 }
 
-.OrderSort a:link, .OrderSort a:visited {
-    color: #fff;
+.OrderSort__List__Item:hover, .OrderSort__List__Item:focus, .OrderSort__List__Item:active {
+    background-color: var(--secondary-color);
+    color: var(--primary-secondary-font-color);
 }
 
-.OrderSort a:hover, .OrderSort a:focus, .OrderSort a:active {
-    background-color: #96cfbf;
-    color: #fff;
-}
-
-.OrderSort__Second {
+.OrderSort__List {
     position: absolute;
+    left: 0;
     top: calc(1.8rem * 1.5 + 1.2em);
     width: 15rem;
     list-style: none;

@@ -1,5 +1,5 @@
 .Layout {
-    background-color: #fff;
+    background-color: var(--primary-secondary-font-color);
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto 1fr auto;

@@ -4,7 +4,7 @@ export const LOAD_ORDERS_SUCCESS = 'LOAD_ORDERS_SUCCESS';
 export const LOAD_ORDERS_FAILED = 'LOAD_ORDERS_FAILED';
 export const ORDER_SORT_DIRECTION = 'ORDER_SORT_DIRECTION';
 
-const setOrders = (orders) => {
+const setOrders = orders => {
     return {
         type: LOAD_ORDERS_SUCCESS,
         payload: {
@@ -36,5 +36,5 @@ export const setOrderSort = orderSort => {
         payload: {
             orderSort
         }
-    }
-}
+    };
+};

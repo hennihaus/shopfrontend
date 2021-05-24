@@ -7,7 +7,7 @@ export const LOAD_SUBCATEGORIES_FAILED = "LOAD_SUBCATEGORIES_FAILED";
 export const SELECT_CATEGORY = "SELECT_CATEGORY";
 export const SELECT_SUBCATEGORY = "SELECT_SUBCATEGORY";
 
-const setCategories = (categories) => {
+const setCategories = categories => {
     return {
         type: LOAD_CATEGORIES_SUCCESS,
         payload: {
@@ -33,7 +33,7 @@ export const loadCategories = () => {
     };
 };
 
-const setSubcategories = (subcategories) => {
+const setSubcategories = subcategories => {
     return {
         type: LOAD_SUBCATEGORIES_SUCCESS,
         payload: {
@@ -75,7 +75,7 @@ export const selectSubcategory = (selectedCategoryId, selectedSubcategoryId) => 
             selectedCategoryId,
             selectedSubcategoryId
         }
-    }
-}
+    };
+};
 
 

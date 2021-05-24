@@ -8,14 +8,14 @@ function Comment(props) {
                 <fieldset>
                     <legend>{props.comment.date}</legend>
                     <div className='Comment__Formset'>
-                        <label>Sterne (0-5)</label>
+                        <label className='Comment__Formset__Label'>Sterne (0-5)</label>
                         <div className='Comment__Formset__Rating'>
                             <Stars rating={props.comment.rating}/>
                         </div>
                     </div>
                     <div className='Comment__Formset'>
-                        <label>Kommentar</label>
-                        <textarea disabled value={props.comment.comment}>
+                        <label className='Comment__Formset__Label'>Kommentar</label>
+                        <textarea className='Comment__Formset__Textarea' disabled value={props.comment.comment}>
                             {props.comment.comment}
                         </textarea>
                     </div>

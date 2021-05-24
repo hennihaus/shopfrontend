@@ -1,10 +1,10 @@
 .Footer {
-    background-color: #000;
+    background-color: var(--footer-color);
 }
 
 .Footer__Content {
     display: block;
-    color: #fff;
+    color: var(--primary-secondary-font-color);
     padding: 0.6em 2rem;
 }
 

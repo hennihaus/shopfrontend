@@ -1,6 +1,4 @@
 import "./ArticleDetailsView.css";
-import {addToShoppingCart} from "../../../store/shopping-cart-actions";
-import {connect} from "react-redux";
 import ShoppingCartButton from "../../ShoppingCarts/ShoppingCart/ShoppingCartButton/ShoppingCartButton";
 import Comments from "../../Comments/Comments";
 import Stars from "../../UI/Stars/Stars";
@@ -14,6 +12,7 @@ function ArticleDetailsView(props) {
     } else {
         averageRating = props.article.rating;
     }
+
     return (
         <article className='ArticleDetailsView'>
             <Title>{props.article.name}</Title>
@@ -39,10 +38,4 @@ function ArticleDetailsView(props) {
     )
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addToShoppingCart: article => dispatch(addToShoppingCart(article))
-    };
-};
-
-export default connect(null, mapDispatchToProps)(ArticleDetailsView);
+export default ArticleDetailsView;

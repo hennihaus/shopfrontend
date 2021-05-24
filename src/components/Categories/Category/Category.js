@@ -1,35 +1,16 @@
 import './Category.css';
-import {connect} from "react-redux";
+import {useDispatch} from "react-redux";
 import {selectCategory} from "../../../store/category-actions";
-import {Component} from "react";
 import Subcategories from "../../Subcategories/Subcategories";
 
-class Category extends Component {
-
-    render() {
-        return (
-            <li className='Category' onClick={() => this.props.selectCategory(this.props.category._id)}>
-                <a href='#'>{this.props.category.name}</a>
-                {
-                    this.props.errorLoadingSubcategories ? null :
-                        <Subcategories categoryId={this.props.category._id}
-                                       subcategoryIds={this.props.category.subcategoryIds}/>
-                }
-            </li>
-        );
-    }
+function Category(props) {
+    const dispatch = useDispatch();
+    return (
+        <li className='Category' onClick={() => dispatch(selectCategory(props.category._id))}>
+            <span>{props.category.name}</span>
+            <Subcategories categoryId={props.category._id} subcategoryIds={props.category.subcategoryIds}/>
+        </li>
+    );
 }
 
-const mapStateToProps = state => {
-    return {
-        errorLoadingSubcategories: state.categoryReducer.errorLoadingSubcategories
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        selectCategory: selectedCategoryId => dispatch(selectCategory(selectedCategoryId))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default Category;
