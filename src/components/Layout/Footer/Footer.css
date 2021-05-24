@@ -1,9 +1,10 @@
 .Footer {
     background-color: #000;
-    color: #fff;
 }
 
 .Footer__Content {
+    display: block;
+    color: #fff;
     padding: 0.6em 2rem;
 }
 

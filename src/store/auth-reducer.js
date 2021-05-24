@@ -1,4 +1,4 @@
-import {updateState} from "../common/util";
+import {addDays, updateState} from "../common/util";
 import {
     SIGN_IN_FAILED,
     SIGN_IN_SUCCESS,
@@ -8,27 +8,51 @@ import {
     SIGN_UP_SUCCESS
 } from "./auth-actions";
 
-const initialState = {};
+const initialState = {
+    expiration: +window.localStorage.getItem('expiration')
+};
 
-const signUp = (state, action) => updateState(state, {
-    signUpMessage: action.payload.signUpMessage,
-});
+const signUp = (state, action) => {
+    const expiration = addDays(new Date(), 7).getTime();
+    window.localStorage.setItem('expiration', `${expiration}`);
+    return updateState(state, {
+        expiration,
+        signUpSuccess: true,
+        signUpMessage: action.payload.signUpMessage,
+    });
+}
 
 const signUpFailed = (state, action) => updateState(state, {
+    signUpSuccess: false,
     signUpMessage: action.payload.signUpMessage
 });
 
-const signIn = (state, action) => updateState(state, {
-    signInMessage: action.payload.signInMessage,
-});
+const signIn = (state, action) => {
+    const expiration = addDays(new Date(), 7).getTime();
+    window.localStorage.setItem('expiration', `${expiration}`);
+    return updateState(state, {
+        expiration,
+        signInSuccess: true,
+        signInMessage: action.payload.signInMessage
+    });
+}
 
 const signInFailed = (state, action) => updateState(state, {
+    signInSuccess: false,
     signInMessage: action.payload.signInMessage
 });
 
-const signOut = (state, action) => updateState(state, {
-    signOutMessage: action.payload.signOutMessage
-});
+const signOut = (state, action) => {
+    window.localStorage.removeItem('expiration');
+    return updateState(state, {
+        expiration: null,
+        signUpSuccess: false,
+        signInSuccess: false,
+        signInMessage: null,
+        signUpMessage: null,
+        signOutMessage: action.payload.signOutMessage
+    });
+}
 
 const signOutFailed = state => updateState(state, {
     signOutMessage: 'Abmeldung fehlgeschlagen'

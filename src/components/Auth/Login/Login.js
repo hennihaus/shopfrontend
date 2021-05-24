@@ -11,13 +11,16 @@ class Login extends Component {
         pw: ''
     }
 
-    signIn = (event) => {
+    signIn = async (event) => {
         event.preventDefault();
         const userData = {
             pw: this.state.pw,
             email: this.state.email
         };
-        this.props.login(userData);
+        await this.props.login(userData);
+        if (this.props.afterLogin && this.props.signInSuccess) {
+            this.props.afterLogin();
+        }
     }
 
     render() {
@@ -47,7 +50,10 @@ class Login extends Component {
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
-                        <input className='Login__Submit' type='submit' value='Login'/>
+                        <div className='Login__Options'>
+                            {this.props.alternative ? this.props.alternative : null}
+                            <input className='Login__Submit' type='submit' value='Login'/>
+                        </div>
                     </fieldset>
                 </form>
                 <p>{this.props.signInMessage}</p>
@@ -58,13 +64,14 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
+        signInSuccess: state.authReducer.signInSuccess,
         signInMessage: state.authReducer.signInMessage
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        login: userData => dispatch(login(userData))
+        login: async userData => dispatch(login(userData))
     };
 };
 

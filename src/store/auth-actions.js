@@ -26,13 +26,14 @@ const signUpFailed = signUpMessage => {
 };
 
 export const register = userData => {
-    return dispatch => {
-        axios.post('/signup', userData, {withCredentials: true})
-            .then(response => dispatch(signUp(response.data)))
-            .catch(error => {
-                console.error(error);
-                dispatch(signUpFailed(error.response.data));
-            });
+    return async dispatch => {
+        try {
+            const response = await axios.post('/signup', userData, {withCredentials: true});
+            dispatch(signUp(response.data));
+        } catch (error) {
+            console.error(error);
+            dispatch(signUpFailed(error.response.data));
+        }
     };
 };
 
@@ -55,13 +56,14 @@ const signInFailed = signInMessage => {
 }
 
 export const login = userData => {
-    return dispatch => {
-        axios.post('/login', userData, {withCredentials: true})
-            .then(response => dispatch(signIn(response.data)))
-            .catch(error => {
-                console.error(error);
-                dispatch(signInFailed(error.response.data));
-            });
+    return async dispatch => {
+        try {
+            const response = await axios.post('/login', userData, {withCredentials: true});
+            dispatch(signIn(response.data));
+        } catch (error) {
+            console.error(error);
+            dispatch(signInFailed(error.response.data));
+        }
     };
 };
 

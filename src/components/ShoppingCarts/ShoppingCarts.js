@@ -4,8 +4,13 @@ import {connect} from "react-redux";
 import {buyArticles} from "../../store/shopping-cart-actions";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Title from "../UI/Title/Title";
+import AuthWrapper from "../Hoc/AuthWrapper";
 
 class ShoppingCarts extends Component {
+
+    state = {
+        activeAuthCheck: false
+    }
 
     buyArticles = () => {
         if (this.props.articles.length) {
@@ -28,25 +33,27 @@ class ShoppingCarts extends Component {
             ))
         }
         return (
-            <section className='ShoppingCarts'>
-                <div className='ShoppingCarts__Header'>
-                    <Title>Warenkorb</Title>
-                    {
-                        this.props.articles.length ? <div>
-                            <h1>Summe: {parseFloat(this.props.articles.reduce((price, article) => price += article.price * article.selectedQuantity, 0)).toFixed(2)} €</h1>
-                            <button className='ShoppingCarts__Header__Button'
-                                    onClick={() => this.buyArticles()}>Bestellen
-                            </button>
-                            {
-                                this.props.errorBuyingArticles ? <p>Fehler beim Kaufen der Artikel</p> : null
-                            }
-                        </div> : <h1>Einkaufswagen ist leer</h1>
-                    }
-                </div>
-                <div className='ShoppingCarts__Section'>
-                    {articles}
-                </div>
-            </section>
+            <AuthWrapper activeAuthCheck={this.state.activeAuthCheck} afterLogin={() => this.buyArticles()}>
+                <section className='ShoppingCarts'>
+                    <div className='ShoppingCarts__Header'>
+                        <Title>Warenkorb</Title>
+                        {
+                            this.props.articles.length ? <div>
+                                <h1>Summe: {parseFloat(this.props.articles.reduce((price, article) => price + article.price * article.selectedQuantity, 0)).toFixed(2)} €</h1>
+                                <button className='ShoppingCarts__Header__Button'
+                                        onClick={() => this.setState({activeAuthCheck: true})}>Bestellen
+                                </button>
+                                {
+                                    this.props.errorBuyingArticles ? <p>Fehler beim Kaufen der Artikel</p> : null
+                                }
+                            </div> : <h1>Einkaufswagen ist leer</h1>
+                        }
+                    </div>
+                    <div className='ShoppingCarts__Section'>
+                        {articles}
+                    </div>
+                </section>
+            </AuthWrapper>
         )
     }
 }

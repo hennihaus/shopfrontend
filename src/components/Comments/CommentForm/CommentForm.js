@@ -6,12 +6,11 @@ import {connect} from "react-redux";
 class CommentForm extends Component {
 
     state = {
-        rateOptions: [0, 1, 2, 3, 4, 5],
-        rating: 0,
+        rating: 5,
         comment: ''
     }
 
-    createComment = (event) => {
+    createComment = event => {
         event.preventDefault();
         const comment = {
             comment: this.state.comment,

@@ -27,7 +27,7 @@
     color: #fff;
 }
 
-.Navbar__Main a:hover, .Navbar__Main a:focus, .Navbar__Main a:active {
+.Navbar__Main a:hover, .Navbar__Main a:focus, .Navbar__Main__Active {
     background-color: #96cfbf;
     color: #fff;
 }

@@ -1,11 +1,12 @@
 import "./Footer.css";
 import Content from "../../UI/Content/Content";
+import {NavLink} from "react-router-dom";
 
 function Footer(props) {
     return (
         <footer className='Footer'>
             <Content>
-                <p className='Footer__Content'>Footer</p>
+                <NavLink className='Footer__Content' to='/imprint'>Impressum</NavLink>
             </Content>
         </footer>
     )

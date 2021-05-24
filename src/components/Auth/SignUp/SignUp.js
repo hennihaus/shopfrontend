@@ -18,7 +18,7 @@ class SignUp extends Component {
         email: ''
     }
 
-    signUp = (event) => {
+    signUp = async (event) => {
         event.preventDefault();
         const userData = {
             pw: this.state.pw,
@@ -31,8 +31,10 @@ class SignUp extends Component {
             phone: this.state.phone,
             email: this.state.email
         };
-
-        this.props.register(userData);
+        await this.props.register(userData);
+        if (this.props.afterLogin && this.props.signUpSuccess) {
+            this.props.afterLogin();
+        }
     }
 
     render() {
@@ -116,7 +118,10 @@ class SignUp extends Component {
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
-                        <input className='SignUp__Submit' type='submit' value='Registrieren'/>
+                        <div className='SignUp__Options'>
+                            {this.props.alternative ? this.props.alternative : null}
+                            <input className='SignUp__Submit' type='submit' value='Registrieren'/>
+                        </div>
                     </fieldset>
                 </form>
                 <p>{this.props.signUpMessage}</p>
@@ -127,13 +132,14 @@ class SignUp extends Component {
 
 const mapStateToProps = state => {
     return {
+        signUpSuccess: state.authReducer.signUpSuccess,
         signUpMessage: state.authReducer.signUpMessage
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        register: userData => dispatch(register(userData))
+        register: async userData => dispatch(register(userData))
     };
 };
 

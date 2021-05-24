@@ -30,11 +30,14 @@
     background-size: 4%;
 }
 
-.Login__Submit {
+.Login__Options {
     float: right;
+}
+
+.Login__Submit {
     border: 1px solid #96cfbf;
     padding: 0.4em 1em;
-    margin-right: 1.2rem;
+    margin: 0 1.2rem;
     color: #fff;
     background-color: #189ca4;
 }
