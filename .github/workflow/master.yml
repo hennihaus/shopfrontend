@@ -1,4 +1,4 @@
-name: Angular CICD
+name: React CICD
 
 on:
   push:
