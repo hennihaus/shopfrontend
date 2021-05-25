@@ -8,13 +8,13 @@
     padding: 0.6em 2rem;
 }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
     .Footer__Content {
         padding: 0.8em 3rem;
     }
 }
 
-@media screen and (min-width: 80em) {
+@media (min-width: 80em) {
     .Footer__Content {
         padding: 0.8em 1.2rem;
     }

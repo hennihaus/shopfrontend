@@ -18,7 +18,7 @@
     padding: 0.6em 2rem;
 }
 
-@media screen and (min-width: 40em){
+@media (min-width: 40em){
     .Header {
         padding: 1.5em 2.4rem;
         text-align: left;
@@ -36,7 +36,7 @@
     }
 }
 
-@media screen and (min-width: 80em) {
+@media (min-width: 80em) {
     .Header__Logo:link, .Header__Logo:visited {
         padding: 0.1em 1.2rem;
     }

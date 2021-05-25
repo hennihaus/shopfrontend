@@ -16,6 +16,11 @@
     display: block;
 }
 
+.Button--big:hover {
+    background-color: #96cfbf;
+    color: #fff;
+}
+
 .Button--form {
     cursor: default;
     margin: 0;

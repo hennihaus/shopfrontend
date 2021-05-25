@@ -45,7 +45,7 @@
     background-color: var(--submit-hover-color);
 }
 
-@media screen and (min-width: 30em) {
+@media (min-width: 30em) {
     .Login__Formset__Label {
         width: 30%;
         text-align: right;
@@ -56,7 +56,7 @@
     }
 }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
     .Login {
         max-width: 40em;
     }

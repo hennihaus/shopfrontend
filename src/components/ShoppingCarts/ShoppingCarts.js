@@ -14,8 +14,8 @@ function ShoppingCarts() {
     const [wantToBuyArticles, setWantToBuyArticles] = useState(false);
 
     const buy = () => {
-        setWantToBuyArticles(true)
-        if (articles.length && wantToBuyArticles && isLoggedIn()) {
+        setWantToBuyArticles(true);
+        if (articles.length && isLoggedIn()) {
             const boughtArticles = articles.map(article => {
                 return {
                     quantity: article.selectedQuantity,
