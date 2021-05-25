@@ -4,17 +4,18 @@ import {useDispatch, useSelector} from "react-redux";
 import {buyArticles} from "../../store/shopping-cart-actions";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Title from "../UI/Title/Title";
-import AuthWrapper from "../Hoc/AuthWrapper";
 import ShoppingCartSummary from "./ShoppingCartSummary/ShoppingCartSummary";
+import {isLoggedIn} from "../../common/util";
+import Auth from "../Auth/Auth";
 
 function ShoppingCarts() {
     const dispatch = useDispatch();
     const articles = useSelector(state => state.shoppingCartReducer.articles);
-    const [activeAuthCheck, setActiveAuthCheck] = useState(false);
-
+    const [wantToBuyArticles, setWantToBuyArticles] = useState(false);
 
     const buy = () => {
-        if (articles.length) {
+        setWantToBuyArticles(true)
+        if (articles.length && wantToBuyArticles && isLoggedIn()) {
             const boughtArticles = articles.map(article => {
                 return {
                     quantity: article.selectedQuantity,
@@ -25,26 +26,27 @@ function ShoppingCarts() {
             dispatch(buyArticles(boughtArticles));
         }
     };
+    if (articles.length && wantToBuyArticles && !isLoggedIn()) {
+        return <Auth afterLogin={() => buy()}/>
+    }
     return (
-        <AuthWrapper activeAuthCheck={activeAuthCheck} afterLogin={() => buy()}>
-            <section className='ShoppingCarts'>
-                <div className='ShoppingCarts__Header'>
-                    <Title>Warenkorb</Title>
-                    {
-                        articles.length
-                            ? <ShoppingCartSummary click={() => setActiveAuthCheck(true)} articles={articles}/>
-                            : <h1>Einkaufswagen ist leer</h1>
-                    }
-                </div>
-                <div className='ShoppingCarts__Content'>
-                    {
-                        articles.map((article, index) => (
-                            <ShoppingCart key={article._id} article={article} index={index}/>)
-                        )
-                    }
-                </div>
-            </section>
-        </AuthWrapper>
+        <section className='ShoppingCarts'>
+            <div className='ShoppingCarts__Header'>
+                <Title>Warenkorb</Title>
+                {
+                    articles.length
+                        ? <ShoppingCartSummary click={() => buy()} articles={articles}/>
+                        : <h1>Einkaufswagen ist leer</h1>
+                }
+            </div>
+            <div className='ShoppingCarts__Content'>
+                {
+                    articles.map((article, index) => (
+                        <ShoppingCart key={article._id} article={article} index={index}/>)
+                    )
+                }
+            </div>
+        </section>
     )
 }
 

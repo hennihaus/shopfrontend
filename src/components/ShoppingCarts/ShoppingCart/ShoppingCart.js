@@ -9,7 +9,8 @@ function ShoppingCart(props) {
     const history = useHistory();
     return (
         <article className='ShoppingCart' onClick={() => history.push(`articles/${props.article._id}`)}>
-            <img className='ShoppingCart__Image' src={props.article.href}
+            <img className='ShoppingCart__Image'
+                 src={props.article.href}
                  alt={props.article.shortdescription}
                  onError={event => event.target.src = '/assets/image_not_found.png'}/>
             <div>
