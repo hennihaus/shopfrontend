@@ -4,41 +4,28 @@
 }
 
 .Categories li {
+    background-color: var(--primary-color);
     position: relative;
     width: 15rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 300;
+    padding: 0.6em 2rem;
+    display: block;
+    color: var(--primary-secondary-font-color);
 }
 
 .Categories li:hover > ul {
     display: inline;
 }
 
-.Categories li {
-    background-color: #189ca4;
+.Categories li:hover, .Categories li:focus, .Categories li:active {
+    background-color: var(--secondary-color);
 }
 
-.Categories a {
-    font-size: 1.8rem;
-    text-align: center;
-    font-weight: 300;
-    padding: 0.6em 2rem;
-    display: block;
-}
-
-.Categories a:link {
-    text-decoration: none;
-}
-
-.Categories a:link, .Categories a:visited {
-    color: #fff;
-}
-
-.Categories a:hover, .Categories a:focus, .Categories a:active {
-    background-color: #96cfbf;
-    color: #fff;
-}
-
-.Categories__Second {
+.Categories__List {
     position: absolute;
+    left: 0;
     top: calc(1.8rem * 1.5 + 1.2em);
     width: 15rem;
     list-style: none;

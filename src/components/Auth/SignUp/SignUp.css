@@ -6,27 +6,27 @@
     margin: 0.5em 0;
 }
 
-.SignUp__Formset label, .SignUp__Formset input {
+.SignUp__Formset__Label, .SignUp__Formset__Input {
     display: inline-block;
 }
 
-.SignUp__Formset label {
+.SignUp__Formset__Label {
     width: 100%;
     padding-right: 2%;
     vertical-align: center;
 }
 
-.SignUp__Formset input {
+.SignUp__Formset__Input {
     width: 100%;
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em;
 }
 
-.SignUp__Formset input:focus {
-    background-color: rgba(150, 207, 191, 0.3);
+.SignUp__Formset__Input:focus {
+    background-color: var(--input-focus-color);
 }
 
-.SignUp__Formset input:required {
+.SignUp__Formset__Input:required {
     padding-right: 3%;
     background-repeat: no-repeat;
     background-position: right top;
@@ -37,30 +37,30 @@
     float: right;
 }
 
-.SignUp__Submit {
-    border: 1px solid #96cfbf;
+.SignUp__Options__Submit {
+    border: 1px solid var(--secondary-color);
     padding: 0.4em 1em;
     margin: 0 1.2rem;
-    color: #fff;
-    background-color: #189ca4;
+    color: var(--primary-secondary-font-color);
+    background-color: var(--primary-color);
 }
 
-.SignUp__Submit:hover {
-    background-color: #397367;
+.SignUp__Options__Submit:hover {
+    background-color: var(--submit-hover-color);
 }
 
-@media screen and (min-width: 30em) {
-    .SignUp__Formset label {
+@media (min-width: 30em) {
+    .SignUp__Formset__Label {
         width: 30%;
         text-align: right;
     }
 
-    .SignUp__Formset input {
+    .SignUp__Formset__Input {
         width: 68%;
     }
 }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
     .SignUp {
         max-width: 40em;
     }

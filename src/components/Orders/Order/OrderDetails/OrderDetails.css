@@ -1,7 +1,7 @@
 .OrderDetails {
     margin: 0.5em 0;
     align-items: center;
-    border: 1px dashed #ddd;
+    border: 1px dashed var(--border-color);
     padding: 0.5em 1em;
     flex: 1 1 auto;
 }

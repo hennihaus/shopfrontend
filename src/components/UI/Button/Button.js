@@ -1,20 +1,16 @@
 import "./Button.css";
-import {Component} from "react";
 
-class Button extends Component {
-
-    handleClick = event => {
+function Button(props) {
+    const handleClick = event => {
         event.stopPropagation();
-        this.props.click();
-    }
-
-    render() {
-        return (
-            <button className='Button' onClick={event => this.handleClick(event)}>
-                {this.props.children}
-            </button>
-        );
-    }
+        props.click();
+    };
+    return (
+        <button className={props.className ? `Button ${props.className}` : 'Button'}
+                onClick={event => handleClick(event)}>
+            {props.children}
+        </button>
+    );
 }
 
 export default Button;

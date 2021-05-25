@@ -1,25 +1,15 @@
 import './Logout.css';
 import {logout} from "../../../store/auth-actions";
-import {connect} from "react-redux";
-import {useHistory} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {NavLink} from "react-router-dom";
 
-function Logout(props) {
-    const history = useHistory();
-    const logout = () => {
-        props.logout();
-        history.push('/login');
-    };
+function Logout() {
+    const dispatch = useDispatch();
     return (
-        <a href='#' className='Logout' onClick={() => logout()}>
+        <NavLink className='Navbar__List__Item__Link' onClick={() => dispatch(logout())} to={'/login'}>
             Logout
-        </a>
+        </NavLink>
     )
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        logout: () => dispatch(logout())
-    };
-};
-
-export default connect(null, mapDispatchToProps)(Logout);
+export default Logout;

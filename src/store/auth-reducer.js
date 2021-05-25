@@ -9,7 +9,12 @@ import {
 } from "./auth-actions";
 
 const initialState = {
-    expiration: +window.localStorage.getItem('expiration')
+    expiration: +window.localStorage.getItem('expiration'),
+    signUpSuccess: null,
+    signUpMessage: null,
+    signInSuccess: null,
+    signInMessage: null,
+    signOutMessage: null
 };
 
 const signUp = (state, action) => {
@@ -20,7 +25,7 @@ const signUp = (state, action) => {
         signUpSuccess: true,
         signUpMessage: action.payload.signUpMessage,
     });
-}
+};
 
 const signUpFailed = (state, action) => updateState(state, {
     signUpSuccess: false,
@@ -35,7 +40,7 @@ const signIn = (state, action) => {
         signInSuccess: true,
         signInMessage: action.payload.signInMessage
     });
-}
+};
 
 const signInFailed = (state, action) => updateState(state, {
     signInSuccess: false,
@@ -52,7 +57,7 @@ const signOut = (state, action) => {
         signUpMessage: null,
         signOutMessage: action.payload.signOutMessage
     });
-}
+};
 
 const signOutFailed = state => updateState(state, {
     signOutMessage: 'Abmeldung fehlgeschlagen'

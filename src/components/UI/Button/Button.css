@@ -1,8 +1,32 @@
 .Button {
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em 1em;
-    color: #fff;
-    background-color: #189ca4;
+    color: var(--primary-secondary-font-color);
+    background-color: var(--primary-color);
     cursor: pointer;
+}
+
+.Button--big {
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 0.6em 2rem;
+    width: 100%;
+    display: block;
+}
+
+.Button--big:hover {
+    background-color: #96cfbf;
+    color: #fff;
+}
+
+.Button--form {
+    cursor: default;
+    margin: 0;
+}
+
+.Button--form:hover {
+    background-color: var(--submit-hover-color);
 }
 

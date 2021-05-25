@@ -6,7 +6,7 @@ export const CHANGE_ARTICLE_QUANTITY = 'CHANGE_ARTICLE_QUANTITY';
 export const BUY_ARTICLES_SUCCESS = 'BUY_ARTICLES_SUCCESS';
 export const BUY_ARTICLES_FAILED = 'BUY_ARTICLES_FAILED';
 
-export const addToShoppingCart = (article) => {
+export const addToShoppingCart = article => {
     return {
         type: ADD_TO_SHOPPING_CART,
         payload: {
@@ -15,7 +15,7 @@ export const addToShoppingCart = (article) => {
     };
 };
 
-export const removeFromShoppingCart = (index) => {
+export const removeFromShoppingCart = index => {
     return {
         type: REMOVE_FROM_SHOPPING_CART,
         payload: {
@@ -31,8 +31,8 @@ export const changeArticleQuantity = (index, selectedQuantity) => {
             index,
             selectedQuantity
         }
-    }
-}
+    };
+};
 
 const setArticles = () => {
     return {
@@ -46,9 +46,9 @@ const buyArticlesFailed = () => {
     };
 };
 
-export const buyArticles = (articles) => {
+export const buyArticles = articles => {
     return dispatch => {
-        axios.post('/shop/order/', articles, {withCredentials: true})
+        axios.post('/shop/order', articles, {withCredentials: true})
             .then(() => dispatch(setArticles()))
             .catch(error => {
                 console.error(error);

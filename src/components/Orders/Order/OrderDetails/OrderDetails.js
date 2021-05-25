@@ -1,12 +1,14 @@
 import './OrderDetails.css';
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
 
 function OrderDetails(props) {
-    const article = props.articles.find(article => article._id === props.orderArticle.articleId);
+    const articles = useSelector(state => state.articleReducer.articles);
+    const article = articles.find(article => article._id === props.orderArticle.articleId);
     return (
         <div className='OrderDetails'>
             <img className='OrderDetails__Image'
-                 src={article.href} alt={article.shortdescription}
+                 src={article.href}
+                 alt={article.shortdescription}
                  onError={event => event.target.src = '/assets/image_not_found.png'}
             />
             <div>
@@ -18,10 +20,4 @@ function OrderDetails(props) {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        articles: state.articleReducer.articles
-    }
-}
-
-export default connect(mapStateToProps)(OrderDetails);
+export default OrderDetails;

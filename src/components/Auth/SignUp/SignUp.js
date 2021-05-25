@@ -45,8 +45,9 @@ class SignUp extends Component {
                     <fieldset>
                         <legend>Formular</legend>
                         <div className='SignUp__Formset'>
-                            <label>E-Mail</label>
-                            <input onChange={event => this.setState({email: event.target.value})}
+                            <label className='SignUp__Formset__Label'>E-Mail</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({email: event.target.value})}
                                    type='email'
                                    value={this.state.email}
                                    required
@@ -54,40 +55,45 @@ class SignUp extends Component {
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Passwort</label>
-                            <input onChange={event => this.setState({pw: event.target.value})} value={this.state.pw}
+                            <label className='SignUp__Formset__Label'>Passwort</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({pw: event.target.value})} value={this.state.pw}
                                    type='password'
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Vorname</label>
-                            <input onChange={event => this.setState({firstname: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Vorname</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({firstname: event.target.value})}
                                    value={this.state.firstname}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Nachname</label>
-                            <input onChange={event => this.setState({lastname: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Nachname</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({lastname: event.target.value})}
                                    value={this.state.lastname}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Straße</label>
-                            <input onChange={event => this.setState({street: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Straße</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({street: event.target.value})}
                                    value={this.state.street}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>PLZ</label>
-                            <input onChange={event => this.setState({postcode: event.target.value})}
+                            <label className='SignUp__Formset__Label'>PLZ</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({postcode: event.target.value})}
                                    value={this.state.postcode}
                                    type='number'
                                    required
@@ -95,24 +101,27 @@ class SignUp extends Component {
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Stadt</label>
-                            <input onChange={event => this.setState({city: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Stadt</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({city: event.target.value})}
                                    value={this.state.city}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Land</label>
-                            <input onChange={event => this.setState({country: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Land</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({country: event.target.value})}
                                    value={this.state.country}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
                             />
                         </div>
                         <div className='SignUp__Formset'>
-                            <label>Telefon</label>
-                            <input onChange={event => this.setState({phone: event.target.value})}
+                            <label className='SignUp__Formset__Label'>Telefon</label>
+                            <input className='SignUp__Formset__Input'
+                                   onChange={event => this.setState({phone: event.target.value})}
                                    value={this.state.phone}
                                    required
                                    style={{backgroundImage: "url(/assets/char_asterisk.svg)"}}
@@ -120,7 +129,7 @@ class SignUp extends Component {
                         </div>
                         <div className='SignUp__Options'>
                             {this.props.alternative ? this.props.alternative : null}
-                            <input className='SignUp__Submit' type='submit' value='Registrieren'/>
+                            <input className='SignUp__Options__Submit' type='submit' value='Registrieren'/>
                         </div>
                     </fieldset>
                 </form>

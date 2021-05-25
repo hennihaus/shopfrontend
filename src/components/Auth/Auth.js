@@ -1,35 +1,17 @@
 import './Auth.css';
-import {Component} from "react";
+import {useState} from "react";
 import Login from "./Login/Login";
+import Button from "../UI/Button/Button";
 import SignUp from "./SignUp/SignUp";
 
-class Auth extends Component {
-
-    state = {
-        isLoginPage: true
-    }
-
-    render() {
-        let authPage;
-        let alternativeButton;
-        if (this.state.isLoginPage) {
-            alternativeButton = <button className='Auth__Submit' onClick={() => this.setState({isLoginPage: false})}>
-                Kein Account
-            </button>
-            authPage = <Login alternative={alternativeButton}
-                              afterLogin={this.props.afterLogin ? this.props.afterLogin : null}/>
-        } else {
-            alternativeButton = <button className='Auth__Submit' onClick={() => this.setState({isLoginPage: true})}>
-                Account vorhanden
-            </button>
-            authPage = <SignUp alternative={alternativeButton}
-                               afterLogin={this.props.afterLogin ? this.props.afterLogin : null}/>
-        }
-        return (
-            <div className='Auth'>
-                {authPage}
-            </div>
-        )
+function Auth(props) {
+    const [isLogin, setIsLogin] = useState(true);
+    if (isLogin) {
+        const button = <Button className='Button--form' click={() => setIsLogin(false)}>Kein Account</Button>;
+        return <Login alternative={button} afterLogin={props.afterLogin ? props.afterLogin : null}/>
+    } else {
+        const button = <Button className='Button--form' click={() => setIsLogin(true)}>Account vorhanden</Button>;
+        return <SignUp alternative={button} afterLogin={props.afterLogin ? props.afterLogin : null}/>
     }
 }
 

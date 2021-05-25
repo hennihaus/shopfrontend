@@ -1,12 +1,12 @@
 .ShoppingCart {
-    border: 1px dashed #ddd;
+    border: 1px dashed var(--border-color);
     padding: 0.5rem 1em;
     margin: 0 1rem 1em 1rem;
     flex: 1 1 calc(27.9rem + 1.5rem);
 }
 
 .ShoppingCart:hover {
-    border: 1px solid #da0545;
+    border: 1px solid var(--warn-color);
 }
 
 .ShoppingCart__Image {
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-@media screen and (min-width: 40em){
+@media screen and (min-width: 40em) {
     .ShoppingCart {
         flex-grow: 0;
     }

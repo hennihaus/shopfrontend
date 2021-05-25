@@ -1,7 +1,7 @@
 import './Imprint.css';
 import Title from "../UI/Title/Title";
 
-function Imprint(props) {
+function Imprint() {
     return (
         <div className='Imprint'>
             <Title>Impressum</Title>

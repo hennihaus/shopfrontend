@@ -2,28 +2,27 @@
     margin: 0.5em 0;
 }
 
-.Login__Formset label, .Login__Formset input {
+.Login__Formset__Label, .Login__Formset__Input {
     display: inline-block;
 }
 
-.Login__Formset label {
+.Login__Formset__Label {
     width: 100%;
     padding-right: 2%;
     vertical-align: center;
 }
 
-.Login__Formset input {
+.Login__Formset__Input {
     width: 100%;
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em;
 }
 
-
-.Login__Formset input:focus {
-    background-color: rgba(150, 207, 191, 0.3);
+.Login__Formset__Input:focus {
+    background-color: var(--input-focus-color);
 }
 
-.Login__Formset input:required {
+.Login__Formset__Input:required {
     padding-right: 3%;
     background-repeat: no-repeat;
     background-position: right top;
@@ -34,30 +33,30 @@
     float: right;
 }
 
-.Login__Submit {
-    border: 1px solid #96cfbf;
+.Login__Options__Submit {
+    border: 1px solid var(--secondary-color);
     padding: 0.4em 1em;
     margin: 0 1.2rem;
-    color: #fff;
-    background-color: #189ca4;
+    color: var(--primary-secondary-font-color);
+    background-color: var(--primary-color);
 }
 
-.Login__Submit:hover {
-    background-color: #397367;
+.Login__Options__Submit:hover {
+    background-color: var(--submit-hover-color);
 }
 
-@media screen and (min-width: 30em) {
-    .Login__Formset label {
+@media (min-width: 30em) {
+    .Login__Formset__Label {
         width: 30%;
         text-align: right;
     }
 
-    .Login__Formset input {
+    .Login__Formset__Input {
         width: 68%;
     }
 }
 
-@media screen and (min-width: 40em) {
+@media (min-width: 40em) {
     .Login {
         max-width: 40em;
     }

@@ -8,7 +8,8 @@ import {
 } from "./shopping-cart-actions";
 
 const initialState = {
-    articles: []
+    articles: [],
+    errorBuyingArticles: null
 };
 
 const addToShoppingCart = (state, action) => {
@@ -35,7 +36,7 @@ const addToShoppingCart = (state, action) => {
         })
     }
     return updateState(state, {});
-}
+};
 
 const removeFromShoppingCart = (state, action) => {
     const articles = [...state.articles];

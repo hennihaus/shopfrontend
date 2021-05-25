@@ -31,8 +31,9 @@ class Login extends Component {
                     <fieldset>
                         <legend>Formular</legend>
                         <div className='Login__Formset'>
-                            <label>E-Mail</label>
-                            <input onChange={event => this.setState({email: event.target.value})}
+                            <label className='Login__Formset__Label'>E-Mail</label>
+                            <input className='Login__Formset__Input'
+                                   onChange={event => this.setState({email: event.target.value})}
                                    value={this.state.email}
                                    placeholder='Ihre E-Mail'
                                    type='email'
@@ -41,8 +42,9 @@ class Login extends Component {
                             />
                         </div>
                         <div className='Login__Formset'>
-                            <label>Passwort</label>
-                            <input onChange={event => this.setState({pw: event.target.value})}
+                            <label className='Login__Formset__Label'>Passwort</label>
+                            <input className='Login__Formset__Input'
+                                   onChange={event => this.setState({pw: event.target.value})}
                                    value={this.state.pw}
                                    placeholder='Ihr Passwort'
                                    type='password'
@@ -52,7 +54,7 @@ class Login extends Component {
                         </div>
                         <div className='Login__Options'>
                             {this.props.alternative ? this.props.alternative : null}
-                            <input className='Login__Submit' type='submit' value='Login'/>
+                            <input className='Login__Options__Submit' type='submit' value='Login'/>
                         </div>
                     </fieldset>
                 </form>

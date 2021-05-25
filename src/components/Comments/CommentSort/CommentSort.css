@@ -3,42 +3,31 @@
     margin: 0;
 }
 
-.CommentSort li {
+.CommentSort__List__Item {
+    background-color: var(--primary-color);
+    color: var(--primary-secondary-font-color);
     position: relative;
     width: 15rem;
-}
-
-.CommentSort li:hover > ul {
-    display: inline;
-}
-
-.CommentSort li {
-    background-color: #189ca4;
-}
-
-.CommentSort a {
     font-size: 1.8rem;
     text-align: center;
     font-weight: 300;
     padding: 0.6em 2rem;
     display: block;
-}
-
-.CommentSort a:link {
     text-decoration: none;
 }
 
-.CommentSort a:link, .CommentSort a:visited {
-    color: #fff;
+.CommentSort__List__Item:hover > ul {
+    display: inline;
 }
 
-.CommentSort a:hover, .CommentSort a:focus, .CommentSort a:active {
-    background-color: #96cfbf;
-    color: #fff;
+.CommentSort__List__Item li:hover, .CommentSort__List__Item li:focus, .CommentSort__List__Item li:active {
+    background-color: var(--secondary-color);
+    color: var(--primary-secondary-font-color);
 }
 
-.CommentSort__Second {
+.CommentSort__List {
     position: absolute;
+    left: 0;
     top: calc(1.8rem * 1.5 + 1.2em);
     width: 15rem;
     list-style: none;

@@ -2,42 +2,36 @@
     margin: 0.5em 0;
 }
 
-.Comment__Formset label, .Comment__Formset__Rating, .Comment__Formset textarea {
+.Comment__Formset__Label, .Comment__Formset__Rating, .Comment__Formset__Textarea {
     display: inline-block;
 }
 
-.Comment__Formset label {
+.Comment__Formset__Label {
     width: 100%;
     padding-right: 2%;
     vertical-align: center;
 }
 
-.Comment__Formset__Rating, .Comment__Formset textarea {
+.Comment__Formset__Rating, .Comment__Formset__Textarea {
     width: 100%;
-    border: 1px solid #96cfbf;
+    border: 1px solid var(--secondary-color);
     padding: 0.4em;
-    background-color: #fff;
+    background-color: var(--primary-secondary-font-color);
 }
 
-.Comment__Formset textarea {
-    min-height: 8em;
+.Comment__Formset__Textarea {
     resize: vertical;
+    min-height: 8em;
 }
 
 @media screen and (min-width: 30em) {
-    .Comment__Formset label {
+    .Comment__Formset__Label {
         width: 30%;
         text-align: right;
     }
 
-    .Comment__Formset__Rating, .Comment__Formset textarea {
+    .Comment__Formset__Rating, .Comment__Formset__Textarea {
         width: 68%;
     }
 }
-
-/*@media screen and (min-width: 40em) {*/
-/*    .Comment {*/
-/*        max-width: 40em;*/
-/*    }*/
-/*}*/
 

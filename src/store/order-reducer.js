@@ -3,7 +3,9 @@ import {convertToDate, updateState} from "../common/util";
 import {orderSort} from "../common/model";
 
 const initialState = {
-    orderSort: orderSort.DATE_DESC
+    orderSort: orderSort.DATE_DESC,
+    orders: null,
+    errorLoadingOrders: null
 };
 
 const setOrders = (state, action) => {
@@ -12,7 +14,7 @@ const setOrders = (state, action) => {
         orders,
         errorLoadingOrders: false
     });
-}
+};
 
 const loadingOrdersFailed = state => updateState(state, {
     errorLoadingOrders: true
@@ -27,7 +29,7 @@ const setOrderSort = (state, action) => {
         });
     }
     return updateState(state, {});
-}
+};
 
 const sortOrders = (sortOrder, orders) => {
     switch (sortOrder) {

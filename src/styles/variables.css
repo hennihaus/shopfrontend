@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #189ca4;
+    --secondary-color: #96cfbf;
+    --warn-color: #da0545;
+    --border-color: #ddd;
+    --footer-color: #000;
+    --main-font-color: #444;
+    --primary-secondary-font-color: #fff;
+    --input-focus-color: rgba(150, 207, 191, 0.3);
+    --submit-hover-color: #397367;
+}
