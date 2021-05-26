@@ -11,7 +11,10 @@ function Article(props) {
                  onError={(event => event.target.src = '/assets/image_not_found.png')}/>
             <div>
                 <h2>{props.article.name}</h2>
-                <p>{props.article.rating ? <Stars rating={props.article.rating}/> : 'Keine Rezensionen'}</p>
+                <p>{props.article.rating || props.article.rating === 0
+                    ? <Stars rating={props.article.rating}/>
+                    : 'Keine Rezensionen'}
+                </p>
                 <p>{parseFloat(props.article.price).toFixed(2)} €</p>
                 <ShoppingCartButton article={props.article}>In den Warenkorb</ShoppingCartButton>
             </div>

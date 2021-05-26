@@ -25,7 +25,10 @@ function ArticleDetailsView(props) {
                     <p>Name: {props.article.name}</p>
                     <p>Preis: {parseFloat(props.article.price).toFixed(2)} Euro</p>
                     <p>Auflager: {props.article.quantity} Stück</p>
-                    <p>Bewertung: {averageRating ? <Stars rating={averageRating}/> : 'Keine Rezensionen'}</p>
+                    <p>Bewertung: {averageRating || averageRating === 0
+                        ? <Stars rating={averageRating}/>
+                        : 'Keine Rezensionen'}
+                    </p>
                     <ShoppingCartButton article={props.article}>In den Warenkorb</ShoppingCartButton>
                 </div>
                 <article className='ArticleDetailsView__Wrapper__Description'>
